@@ -1,21 +1,16 @@
-import { Stack } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { Tabs } from 'expo-router';
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          title: 'Home',
-        }}
-      />
-      <Stack.Screen
-        name="tabs"
-        options={{
-          headerShown: false, 
-        }}
-      />
-      {/* <Tabs.Screen
+    <Tabs
+      initialRouteName="profile"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
@@ -32,7 +27,7 @@ export default function RootLayout() {
             <Ionicons name="settings" size={size} color={color} />
           ),
         }}
-      /> */}
-    </Stack>
+      />
+    </Tabs>
   );
 }
